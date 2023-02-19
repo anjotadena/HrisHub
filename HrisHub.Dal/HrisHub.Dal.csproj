@@ -18,4 +18,8 @@
     <ProjectReference Include="..\HrisHub.Models\HrisHub.Models.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
 </Project>

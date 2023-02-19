@@ -22,7 +22,7 @@ namespace HrisHub.Dal
                 return;
             }
 
-            options.UseSqlServer("Data Source = localhost; Initial Catalog = HrisHubDb; Integrated Security = true;");
+            options.UseSqlServer("Data Source=DELL-CEBUHQ-001\\SQLEXPRESS;Initial Catalog=HrisHubDb;Integrated Security=True");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

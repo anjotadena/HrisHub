@@ -25,7 +25,7 @@ namespace HrisHub.Models
 
         public DateTime EndDate { get; set; }
 
-        [Column(TypeName = "Decimal(18, 2")]
+        [Column(TypeName = "Decimal(18, 2)")]
         public decimal Fees { get; set; }
 
         [MaxLength(15)]

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HrisHub.Dal.Migrations
 {
     [DbContext(typeof(HrisHubDbContext))]
-    [Migration("20230219011706_CreateNewDatabase")]
+    [Migration("20230219013814_CreateNewDatabase")]
     partial class CreateNewDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -119,7 +119,7 @@ namespace HrisHub.Dal.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<decimal>("Fees")
-                        .HasColumnType("Decimal(18, 2");
+                        .HasColumnType("Decimal(18,2)");
 
                     b.Property<string>("Logo")
                         .IsRequired()

@@ -41,7 +41,7 @@ namespace HrisHub.Dal.Migrations
                     Description = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: false),
                     StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     EndDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Fees = table.Column<decimal>(type: "Decimal(18, 2", nullable: false),
+                    Fees = table.Column<decimal>(type: "Decimal(18,2)", nullable: false),
                     SeatsFilled = table.Column<int>(type: "int", maxLength: 15, nullable: false),
                     Logo = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false)
                 },

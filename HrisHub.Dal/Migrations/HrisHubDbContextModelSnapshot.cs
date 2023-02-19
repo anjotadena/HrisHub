@@ -117,7 +117,7 @@ namespace HrisHub.Dal.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<decimal>("Fees")
-                        .HasColumnType("Decimal(18, 2");
+                        .HasColumnType("Decimal(18,2)");
 
                     b.Property<string>("Logo")
                         .IsRequired()
