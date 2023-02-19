@@ -1,0 +1,17 @@
+C:\Users\taden\source\repos\HrisHub\HrisHub\HrisHub.Dal\bin\Debug\net6.0\HrisHub.Dal.deps.json
+C:\Users\taden\source\repos\HrisHub\HrisHub\HrisHub.Dal\bin\Debug\net6.0\HrisHub.Dal.runtimeconfig.json
+C:\Users\taden\source\repos\HrisHub\HrisHub\HrisHub.Dal\bin\Debug\net6.0\HrisHub.Dal.dll
+C:\Users\taden\source\repos\HrisHub\HrisHub\HrisHub.Dal\bin\Debug\net6.0\HrisHub.Dal.pdb
+C:\Users\taden\source\repos\HrisHub\HrisHub\HrisHub.Dal\bin\Debug\net6.0\HrisHub.Models.dll
+C:\Users\taden\source\repos\HrisHub\HrisHub\HrisHub.Dal\bin\Debug\net6.0\HrisHub.Models.pdb
+C:\Users\taden\source\repos\HrisHub\HrisHub\HrisHub.Dal\obj\Debug\net6.0\HrisHub.Dal.csproj.AssemblyReference.cache
+C:\Users\taden\source\repos\HrisHub\HrisHub\HrisHub.Dal\obj\Debug\net6.0\HrisHub.Dal.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\taden\source\repos\HrisHub\HrisHub\HrisHub.Dal\obj\Debug\net6.0\HrisHub.Dal.AssemblyInfoInputs.cache
+C:\Users\taden\source\repos\HrisHub\HrisHub\HrisHub.Dal\obj\Debug\net6.0\HrisHub.Dal.AssemblyInfo.cs
+C:\Users\taden\source\repos\HrisHub\HrisHub\HrisHub.Dal\obj\Debug\net6.0\HrisHub.Dal.csproj.CoreCompileInputs.cache
+C:\Users\taden\source\repos\HrisHub\HrisHub\HrisHub.Dal\obj\Debug\net6.0\HrisHub.Dal.csproj.CopyComplete
+C:\Users\taden\source\repos\HrisHub\HrisHub\HrisHub.Dal\obj\Debug\net6.0\HrisHub.Dal.dll
+C:\Users\taden\source\repos\HrisHub\HrisHub\HrisHub.Dal\obj\Debug\net6.0\refint\HrisHub.Dal.dll
+C:\Users\taden\source\repos\HrisHub\HrisHub\HrisHub.Dal\obj\Debug\net6.0\HrisHub.Dal.pdb
+C:\Users\taden\source\repos\HrisHub\HrisHub\HrisHub.Dal\obj\Debug\net6.0\HrisHub.Dal.genruntimeconfig.cache
+C:\Users\taden\source\repos\HrisHub\HrisHub\HrisHub.Dal\obj\Debug\net6.0\ref\HrisHub.Dal.dll

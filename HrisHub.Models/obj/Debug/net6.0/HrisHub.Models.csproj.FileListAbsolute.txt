@@ -1,0 +1,12 @@
+C:\Users\taden\source\repos\HrisHub\HrisHub\HrisHub.Models\bin\Debug\net6.0\HrisHub.Models.deps.json
+C:\Users\taden\source\repos\HrisHub\HrisHub\HrisHub.Models\bin\Debug\net6.0\HrisHub.Models.dll
+C:\Users\taden\source\repos\HrisHub\HrisHub\HrisHub.Models\bin\Debug\net6.0\HrisHub.Models.pdb
+C:\Users\taden\source\repos\HrisHub\HrisHub\HrisHub.Models\obj\Debug\net6.0\HrisHub.Models.csproj.AssemblyReference.cache
+C:\Users\taden\source\repos\HrisHub\HrisHub\HrisHub.Models\obj\Debug\net6.0\HrisHub.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\taden\source\repos\HrisHub\HrisHub\HrisHub.Models\obj\Debug\net6.0\HrisHub.Models.AssemblyInfoInputs.cache
+C:\Users\taden\source\repos\HrisHub\HrisHub\HrisHub.Models\obj\Debug\net6.0\HrisHub.Models.AssemblyInfo.cs
+C:\Users\taden\source\repos\HrisHub\HrisHub\HrisHub.Models\obj\Debug\net6.0\HrisHub.Models.csproj.CoreCompileInputs.cache
+C:\Users\taden\source\repos\HrisHub\HrisHub\HrisHub.Models\obj\Debug\net6.0\HrisHub.Models.dll
+C:\Users\taden\source\repos\HrisHub\HrisHub\HrisHub.Models\obj\Debug\net6.0\refint\HrisHub.Models.dll
+C:\Users\taden\source\repos\HrisHub\HrisHub\HrisHub.Models\obj\Debug\net6.0\HrisHub.Models.pdb
+C:\Users\taden\source\repos\HrisHub\HrisHub\HrisHub.Models\obj\Debug\net6.0\ref\HrisHub.Models.dll

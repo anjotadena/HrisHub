@@ -3,7 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HrisHub.Models", "HrisHub.Models\HrisHub.Models.csproj", "{3B4C9E8D-5405-483F-89A1-F9ABCCF5BE17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HrisHub.Dal", "HrisHub.Dal\HrisHub.Dal.csproj", "{33A1B102-98BE-4FD9-BC9D-67AFCCA7A820}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3B4C9E8D-5405-483F-89A1-F9ABCCF5BE17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B4C9E8D-5405-483F-89A1-F9ABCCF5BE17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B4C9E8D-5405-483F-89A1-F9ABCCF5BE17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B4C9E8D-5405-483F-89A1-F9ABCCF5BE17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33A1B102-98BE-4FD9-BC9D-67AFCCA7A820}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33A1B102-98BE-4FD9-BC9D-67AFCCA7A820}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33A1B102-98BE-4FD9-BC9D-67AFCCA7A820}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33A1B102-98BE-4FD9-BC9D-67AFCCA7A820}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
