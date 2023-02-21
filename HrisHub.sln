@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HrisHub.Models", "HrisHub.M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HrisHub.Dal", "HrisHub.Dal\HrisHub.Dal.csproj", "{33A1B102-98BE-4FD9-BC9D-67AFCCA7A820}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HrisHub.WebAPI", "HrisHub.WebAPI\HrisHub.WebAPI.csproj", "{B7DAF916-5A6B-4A10-9A29-7656D8FC0470}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{33A1B102-98BE-4FD9-BC9D-67AFCCA7A820}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33A1B102-98BE-4FD9-BC9D-67AFCCA7A820}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33A1B102-98BE-4FD9-BC9D-67AFCCA7A820}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7DAF916-5A6B-4A10-9A29-7656D8FC0470}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7DAF916-5A6B-4A10-9A29-7656D8FC0470}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7DAF916-5A6B-4A10-9A29-7656D8FC0470}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7DAF916-5A6B-4A10-9A29-7656D8FC0470}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
