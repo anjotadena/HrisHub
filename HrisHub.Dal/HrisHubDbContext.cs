@@ -10,7 +10,7 @@ namespace HrisHub.Dal
         
         }
 
-        public HrisHubDbContext(DbContextOptions options): base(options)
+        public HrisHubDbContext(DbContextOptions options) : base(options)
         {
         
         }

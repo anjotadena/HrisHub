@@ -5,11 +5,12 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
 
-builder.Services.AddDbContext<HrisHubDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("MysqlConStr")));
+builder.Services.AddDbContext<HrisHubDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("MsSqlConStr")));
+builder.Services.AddTransient<ICommonRepository<Employee>, CommonRepository<Employee>>();
 
+builder.Services.AddRouting(options => options.LowercaseUrls = true);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
