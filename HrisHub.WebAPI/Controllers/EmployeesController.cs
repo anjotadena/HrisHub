@@ -73,7 +73,7 @@ namespace HrisHub.WebAPI.Controllers
                 return NotFound();
             }
 
-            _employeeRepository.Update(employee);
+            _employeeRepository.Delete(employee);
             _employeeRepository.SaveChanges();
 
             return NoContent();

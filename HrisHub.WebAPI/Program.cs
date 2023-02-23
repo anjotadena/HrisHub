@@ -9,6 +9,7 @@ builder.Services.AddControllers();
 
 builder.Services.AddDbContext<HrisHubDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("MsSqlConStr")));
 builder.Services.AddTransient<ICommonRepository<Employee>, CommonRepository<Employee>>();
+builder.Services.AddTransient<ICommonRepository<Event>, CommonRepository<Event>>();
 
 builder.Services.AddRouting(options => options.LowercaseUrls = true);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
