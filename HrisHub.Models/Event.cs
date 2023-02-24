@@ -28,7 +28,6 @@ namespace HrisHub.Models
         [Column(TypeName = "Decimal(18, 2)")]
         public decimal Fees { get; set; }
 
-        [MaxLength(15)]
         public int SeatsFilled { get; set; }
 
         [MaxLength(200)]

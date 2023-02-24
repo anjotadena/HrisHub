@@ -1,6 +1,8 @@
 using HrisHub.Dal;
 using HrisHub.Models;
+using HrisHub.WebAPI.Jwt;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Primitives;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,7 +12,8 @@ builder.Services.AddControllers();
 builder.Services.AddDbContext<HrisHubDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("MsSqlConStr")));
 builder.Services.AddTransient<ICommonRepository<Employee>, CommonRepository<Employee>>();
 builder.Services.AddTransient<ICommonRepository<Event>, CommonRepository<Event>>();
-
+builder.Services.AddTransient<IAuthenticationRepository, AuthenticationRepository>();
+builder.Services.AddScoped<ITokenManager, TokenManager>();
 builder.Services.AddRouting(options => options.LowercaseUrls = true);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

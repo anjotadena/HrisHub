@@ -67,3 +67,6 @@ C:\Users\taden\source\repos\HrisHub\HrisHub\HrisHub.WebAPI\bin\Debug\net6.0\Hris
 C:\Users\taden\source\repos\HrisHub\HrisHub\HrisHub.WebAPI\bin\Debug\net6.0\HrisHub.Models.dll
 C:\Users\taden\source\repos\HrisHub\HrisHub\HrisHub.WebAPI\bin\Debug\net6.0\HrisHub.Dal.pdb
 C:\Users\taden\source\repos\HrisHub\HrisHub\HrisHub.WebAPI\bin\Debug\net6.0\HrisHub.Models.pdb
+C:\Users\taden\source\repos\HrisHub\HrisHub\HrisHub.WebAPI\bin\Debug\net6.0\BCrypt.Net-Next.dll
+C:\Users\taden\source\repos\HrisHub\HrisHub\HrisHub.WebAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\taden\source\repos\HrisHub\HrisHub\HrisHub.WebAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
