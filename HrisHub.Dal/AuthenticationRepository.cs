@@ -24,5 +24,10 @@ namespace HrisHub.Dal
 
             return _dbContext.SaveChanges();
         }
+
+        public string GetUserRole(int roleId)
+        {
+            return _dbContext.Roles.SingleOrDefault(r => r.Id == roleId).Name;
+        }
     }
 }

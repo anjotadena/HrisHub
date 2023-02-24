@@ -50,11 +50,13 @@ namespace HrisHub.WebAPI.Controllers
                 return BadRequest("Invalid credentials!");
             }
 
+            var roleName = _repository.GetUserRole(authUser.RoleId);
+
             var authResponse = new AuthResponse
             {
                 IsAuthenticated = true,
-                Role = "Dummy Role1",
-                Token = _tokenManager.GenerateToken(authUser)
+                Role = roleName,
+                Token = _tokenManager.GenerateToken(authUser, roleName)
             };
 
             return Ok(authResponse);

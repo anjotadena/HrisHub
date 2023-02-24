@@ -15,10 +15,11 @@ namespace HrisHub.WebAPI.Jwt
             _key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["HrisHubJWT:Secret"]));
         }
 
-        public string GenerateToken(User user)
+        public string GenerateToken(User user, string roleName)
         {
             var claims = new List<Claim> { 
-                new Claim(JwtRegisteredClaimNames.Name, user.Email)
+                new Claim(JwtRegisteredClaimNames.Name, user.Email),
+                new Claim(ClaimTypes.Role, roleName),
             };
             var credentials = new SigningCredentials(_key, SecurityAlgorithms.HmacSha256Signature);
             var tokenDescriptor = new SecurityTokenDescriptor

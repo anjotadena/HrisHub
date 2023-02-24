@@ -2,7 +2,9 @@ using HrisHub.Dal;
 using HrisHub.Models;
 using HrisHub.WebAPI.Jwt;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Primitives;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +17,18 @@ builder.Services.AddTransient<ICommonRepository<Event>, CommonRepository<Event>>
 builder.Services.AddTransient<IAuthenticationRepository, AuthenticationRepository>();
 builder.Services.AddScoped<ITokenManager, TokenManager>();
 builder.Services.AddRouting(options => options.LowercaseUrls = true);
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["HrisHubJWT:Secret"])),
+        ValidateIssuer = false,
+        ValidateAudience = false,
+    };
+});
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
