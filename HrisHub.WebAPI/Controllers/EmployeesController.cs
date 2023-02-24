@@ -1,5 +1,6 @@
 ﻿using HrisHub.Dal;
 using HrisHub.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -30,6 +31,7 @@ namespace HrisHub.WebAPI.Controllers
         [HttpGet("{id:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [Authorize(Roles = "Employee,HR")]
         public ActionResult<Employee> Get(int id)
         {
             var employee = _employeeRepository.GetDetails(id);
@@ -40,6 +42,7 @@ namespace HrisHub.WebAPI.Controllers
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [Authorize(Roles = "HR")]
         public ActionResult<Employee> Create(Employee employee)
         {
             _employeeRepository.Insert(employee);
@@ -52,6 +55,7 @@ namespace HrisHub.WebAPI.Controllers
         [HttpPut]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [Authorize(Roles = "Employee,HR")]
         public ActionResult<Employee> Update(Employee employee)
         {
             _employeeRepository.Update(employee);
@@ -64,6 +68,7 @@ namespace HrisHub.WebAPI.Controllers
         [HttpDelete]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [Authorize(Roles = "HR")]
         public ActionResult<Employee> Delete(int id)
         {
             var employee = _employeeRepository.GetDetails(id);
