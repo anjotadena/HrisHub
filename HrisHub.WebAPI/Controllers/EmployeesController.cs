@@ -21,6 +21,7 @@ namespace HrisHub.WebAPI.Controllers
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [Authorize(Roles = "Employee,HR")]
         public ActionResult<IEnumerable<Employee>> Get()
         {
             var employees = _employeeRepository.GetAll();
@@ -55,7 +56,7 @@ namespace HrisHub.WebAPI.Controllers
         [HttpPut]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [Authorize(Roles = "Employee,HR")]
+        [Authorize(Roles = "HR")]
         public ActionResult<Employee> Update(Employee employee)
         {
             _employeeRepository.Update(employee);
