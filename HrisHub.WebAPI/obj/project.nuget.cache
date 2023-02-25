@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "W+BUwAytCHH3YhQGhWZEaGxFWNsFGElcJCi9BbKvpB9G3VYjAFU7EMj+bQe4z+lpegMTRNE3M43c48EY5OEL6w==",
+  "dgSpecHash": "8SUPKZcRsnbfsJyzUu/k3ARbzmcp+pW0Dl/QkYqOHoXU3yjq4uvSBWgfsKcJxkYm4Y3Z7K3DlyitN7zdT97DAQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\taden\\source\\repos\\HrisHub\\HrisHub\\HrisHub.WebAPI\\HrisHub.WebAPI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\taden\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
+    "C:\\Users\\taden\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
     "C:\\Users\\taden\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\taden\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.14\\microsoft.aspnetcore.authentication.jwtbearer.6.0.14.nupkg.sha512",
-    "C:\\Users\\taden\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\taden\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\taden\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\taden\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
     "C:\\Users\\taden\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.14\\microsoft.entityframeworkcore.6.0.14.nupkg.sha512",
