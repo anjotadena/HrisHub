@@ -6,38 +6,60 @@ namespace HrisHub.Dal
     {
         private readonly HrisHubDbContext _dbContext;
 
-        private DbSet<T> table;
-
         public CommonRepository(HrisHubDbContext dbContext)
         {
             _dbContext = dbContext;
-            table = _dbContext.Set<T>();
         }
 
-        public List<T> GetAll()
+        public async Task<List<T>> GetAll()
         {
-            return table.ToList();
+            return await _dbContext.Set<T>().ToListAsync();
         }
 
-        public T GetDetails(int id)
+        public async Task<T> GetDetails(int id)
         {
-            return table.Find(id);
+            return await _dbContext.Set<T>().FindAsync(id);
         }
 
-        public void Insert(T item)
+        public async Task<T> Insert(T entity)
         {
-            table.Add(item);
+            _dbContext.Set<T>().Add(entity);
+
+            await _dbContext.SaveChangesAsync();
+
+            return entity;
         }
 
-        public void Update(T item)
+        public async Task<T> Update(int id, T entity)
         {
-            table.Update(item);
-            _dbContext.Entry(item).State = EntityState.Modified;
+            var currentEntity = await _dbContext.Set<T>().FindAsync(id);
+
+            if (currentEntity == null)
+            {
+                return currentEntity;
+            }
+
+            _dbContext.Entry(entity).State = EntityState.Modified;
+
+            await _dbContext.SaveChangesAsync();
+
+            return entity;
         }
 
-        public void Delete(T item)
+        public async Task<T> Delete(int id)
         {
-            table.Remove(item);
+            var entity = await _dbContext.Set<T>().FindAsync(id);
+
+            if (entity == null)
+            {
+                return entity;
+            }
+
+            _dbContext.Set<T>().Remove(entity);
+
+            await _dbContext.SaveChangesAsync();
+
+            return entity;
         }
 
         public int SaveChanges()

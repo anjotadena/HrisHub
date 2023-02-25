@@ -2,16 +2,14 @@
 {
     public interface ICommonRepository<T>
     {
-        List<T> GetAll();
+        Task<List<T>> GetAll();
 
-        T GetDetails(int id);
+        Task<T> GetDetails(int id);
 
-        void Insert(T item);
+        Task<T> Insert(T entity);
 
-        void Update(T item);
+        Task<T> Update(int id, T entity);
 
-        void Delete(T item);
-
-        int SaveChanges();
+        Task<T> Delete(int id);
     }
 }

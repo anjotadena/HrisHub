@@ -2,17 +2,12 @@
 using HrisHub.Dal;
 using HrisHub.Models;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
 using HrisHub.WebAPI.DTO;
-using Microsoft.AspNetCore.Cors;
 
 namespace HrisHub.WebAPI.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class EmployeesController : ControllerBase
+    public class EmployeesController : APIController
     {
         private readonly ICommonRepository<Employee> _employeeRepository;
         private readonly IMapper _mapper;
@@ -27,9 +22,9 @@ namespace HrisHub.WebAPI.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [Authorize(Roles = "Employee,HR")]
-        public ActionResult<IEnumerable<EmployeeDTO>> Get()
+        public async Task<ActionResult<IEnumerable<EmployeeDTO>>> Get()
         {
-            var employees = _employeeRepository.GetAll();
+            var employees = await _employeeRepository.GetAll();
 
             return employees.Count <= 0 ? NotFound() : Ok(_mapper.Map<IEnumerable<EmployeeDTO>>(employees));
         }
@@ -38,9 +33,9 @@ namespace HrisHub.WebAPI.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [Authorize(Roles = "Employee,HR")]
-        public ActionResult<EmployeeDTO> GetDetails(int id)
+        public async Task<ActionResult<EmployeeDTO>> GetDetails(int id)
         {
-            var employee = _employeeRepository.GetDetails(id);
+            var employee = await _employeeRepository.GetDetails(id);
                
             return employee == null ? NotFound() : Ok(_mapper.Map<EmployeeDTO>(employee));
         }
@@ -49,16 +44,20 @@ namespace HrisHub.WebAPI.Controllers
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [Authorize(Roles = "HR")]
-        public ActionResult<Employee> Create(NewEmployeeDTO employeeDTO)
+        public async Task<ActionResult<Employee>> Create(NewEmployeeDTO employeeDTO)
         {
             var employee = _mapper.Map<Employee>(employeeDTO);
 
-            _employeeRepository.Insert(employee);
+            var result = await _employeeRepository.Insert(employee);
 
-            var result = _employeeRepository.SaveChanges();
+            if (result == null)
+            {
+                return BadRequest();
+            }
+
             var employeeDetails = _mapper.Map<EmployeeDTO>(employee);
 
-            return result > 0 ? CreatedAtAction("GetDetails", new { id = employeeDetails.Id }, employeeDetails) : BadRequest();
+            return CreatedAtAction("GetDetails", new { id = employeeDetails.Id }, employeeDetails);
         }
 
         [HttpPut("{id:int}")]
@@ -66,9 +65,9 @@ namespace HrisHub.WebAPI.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [Authorize(Roles = "HR")]
-        public ActionResult<Employee> Update(int id, UpdateEmployeeDTO employeeDTO)
+        public async Task<ActionResult<Employee>> Update(int id, UpdateEmployeeDTO employeeDTO)
         {
-            var currentEmployee = _employeeRepository.GetDetails(id);
+            var currentEmployee = await _employeeRepository.GetDetails(id);
 
             if (currentEmployee == null)
             {
@@ -76,20 +75,23 @@ namespace HrisHub.WebAPI.Controllers
             }
 
             var employee = _mapper.Map<Employee>(employeeDTO);
-            _employeeRepository.Update(employee);
+            var result = await _employeeRepository.Update(id, employee);
 
-            var result = _employeeRepository.SaveChanges();
+            if (result == null)
+            {
+                return BadRequest();
+            } 
 
             var employeeDetails = _mapper.Map<EmployeeDTO>(employee);
 
-            return result > 0 ? Ok(employeeDetails) : BadRequest();
+            return Ok(employeeDetails);
         }
 
         [HttpDelete]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [Authorize(Roles = "HR")]
-        public ActionResult<Employee> Delete(int id)
+        public async Task<ActionResult> Delete(int id)
         {
             var employee = _employeeRepository.GetDetails(id);
 
@@ -98,8 +100,12 @@ namespace HrisHub.WebAPI.Controllers
                 return NotFound();
             }
 
-            _employeeRepository.Delete(employee);
-            _employeeRepository.SaveChanges();
+            var result = await _employeeRepository.Delete(id);
+
+            if (result == null)
+            {
+                return BadRequest();
+            }
 
             return NoContent();
         }
