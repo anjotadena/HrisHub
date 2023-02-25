@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
+var corsPolicyName = "CorsPublicPolicy";
 
 // Add services to the container.
 builder.Services.AddControllers();
@@ -23,7 +24,7 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("PublicPolicy", policy =>
+    options.AddPolicy(corsPolicyName, policy =>
     {
         policy.AllowAnyHeader();
         policy.AllowAnyMethod();
@@ -81,7 +82,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseCors();
+app.UseCors(corsPolicyName);
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();

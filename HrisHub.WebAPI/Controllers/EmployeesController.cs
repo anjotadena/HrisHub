@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using HrisHub.WebAPI.DTO;
+using Microsoft.AspNetCore.Cors;
 
 namespace HrisHub.WebAPI.Controllers
 {
@@ -63,9 +64,17 @@ namespace HrisHub.WebAPI.Controllers
         [HttpPut("{id:int}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         [Authorize(Roles = "HR")]
-        public ActionResult<Employee> Update(UpdateEmployeeDTO employeeDTO)
+        public ActionResult<Employee> Update(int id, UpdateEmployeeDTO employeeDTO)
         {
+            var currentEmployee = _employeeRepository.GetDetails(id);
+
+            if (currentEmployee == null)
+            {
+                return NotFound();
+            }
+
             var employee = _mapper.Map<Employee>(employeeDTO);
             _employeeRepository.Update(employee);
 
